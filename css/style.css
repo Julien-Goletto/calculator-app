@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+main{
+    /*Dispositions*/
+    background-color: var(--main-bg-color);
+    height : 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*Police et tailles*/
+    font-family: 'Spartan', sans-serif;
+    font-size : 2rem;
+    font-weight : 700;
+
+    padding : 1em .75em;
+}
+
+.calculator{
+    display : flex;
+    flex-direction: column;
+    width : 100%
+}
+
+.calculator__header{
+    display : flex;
+    justify-content: space-between;
+    padding-bottom: 1.25em;
+    color : var(--text-color-header);
+    font-size: .85em;
+}
+
+.header__theme-selector{
+    width : 10em;
+    display : flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .5em;
+    text-transform: uppercase;
+}
+
+.theme-selector__name{
+    /*Alignement vertical*/
+    position : relative;
+    top : .75em;
+}
+
+.theme-selector__selector{
+    width : 4.5em; 
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selector__tags{
+    width : 70%;
+    display : flex;
+    justify-content: space-between;
+    font-size: .75em;
+    margin-bottom : .65em;
+}
+
+.selector__slider{
+    height: 1.75em;
+    border-radius: 1em;
+    background-color: var(--display-bg-color);
+    display: flex;
+    justify-content: center;
+    padding : 0.25em;
+}
+
+/*Mise en forme input range*/
+/*Mozilla*/
+input[type=range]::-moz-range-thumb{
+    border : solid 2px var(--equal-key-shadow-color);
+    height : 1em;
+    width : 1em;
+    border-radius: 1em;
+    background-color: var(--equal-key-bg-color);
+    cursor : pointer;
+}
+
+input[type=range]::-moz-range-track {
+    cursor: pointer;
+}
+
+/* -------------------------------- à ajouter ----------------------------------------------------------*/
+/*Webkit*/
+
+/*IE*/
+
+.calculator__display{
+    background-color: var(--display-bg-color);
+    border-radius: .3em;
+    padding : .75em .5em;
+    text-align: end;
+    color : var(--text-color-display);
+    margin-bottom: .75em;
+    height : 2.25em;
+}
+
+.calculator__keypad{
+    background-color : var(--keypad-bg-color);
+    border-radius: .3em;
+    padding : .75em;
+    
+    /*Disposition des touches*/
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+    grid-template-areas :
+        "seven eight nine Del"
+        "four five six plus"
+        "one two three minus"
+        "point zero divide cross"
+        "reset reset equal equal";
+    gap : .35em;
+}
+
+.keypad__keys{
+    /*Ecraser les styles par défauts*/
+    font-weight: 700;
+    font-size : 1em;
+    border : none;
+    border-radius: 0.25em;
+    background-color: var(--keys-bg-color);
+    box-shadow: 0 .15em 0 var(--keys-shadow-color);
+    font-family: 'Spartan', sans-serif;
+    color : var(--text-color-main-keys);
+    height : 1.85em;
+    cursor : pointer;
+
+    /*On prolonge l'espacement des touches de la hauteur des ombres*/
+    margin-bottom: .15em;
+
+    padding : 0.40em .25em .25em;
+    text-align: center;
+}
+
+.--secondary__keys, .--tertiary__keys{
+    text-transform: uppercase;
+    font-size: .5em;
+    height : 3.7em;
+}
+
+.--secondary__keys{
+    color : var(--text-color-del-reset-keys);
+    background-color: var(--del-reset-key-bg-color);
+    box-shadow: 0 .30em 0 var(--del-reset-key-shadow-color);
+}
+
+.--tertiary__keys{
+    color : var(--text-color-equal-key);
+    background-color: var(--equal-key-bg-color);
+    box-shadow: 0 .30em 0 var(--equal-key-shadow-color);
+}
+
+/*Attribution des emplacements particuliers*/
+.--reset{
+    grid-area: reset;
+}
+
+.--equal{
+    grid-area: equal;
+    grid-column: span 2;
+}
+
+@media screen and (min-width : 600px) {
+    .calculator{
+        max-width: 560px;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+<body>
+  <main>
+    <section class="calculator">
+      <header class="calculator__header">
+        <h1 class="header__name">calc</h1>
+        <div class="header__theme-selector">
+          <span class="theme-selector__name">Theme</span>
+          <div class="theme-selector__selector">
+            <div class="selector__tags">
+              <div class="tags__tag">1</div>
+              <div class="tags__tag">2</div>
+              <div class="tags__tag">3</div>
+            </div>
+            <div class="selector__slider">
+              <input type="range" id="theme" name="theme" min="1" max="3">
+            </div>
+          </div>
+      </header>
+      </div>
+      <div class="calculator__display">399.981</div>
+      <div class="calculator__keypad">
+        <input type="button" value="7" onclick="get(this.value);display()" id="7" class="keypad__keys"></input>
+        <input type="button" value="8" onclick="get(this.value);display()" id="8" class="keypad__keys"></input>
+        <input type="button" value="9" onclick="get(this.value);display()" id="9" class="keypad__keys"></input>
+        <input type="button" value="del" onclick="deleteLastElmt();display()" id="del" class="keypad__keys --secondary__keys"></input>
+        <input type="button" value="4" onclick="get(this.value);display()" id="4" class="keypad__keys"></input>
+        <input type="button" value="5" onclick="get(this.value);display()" id="5" class="keypad__keys"></input>
+        <input type="button" value="6" onclick="get(this.value);display()" id="6" class="keypad__keys"></input>
+        <input type="button" value="+" onclick="get(this.value);display()" id="+" class="keypad__keys"></input>
+        <input type="button" value="1" onclick="get(this.value);display()" id="1" class="keypad__keys"></input>
+        <input type="button" value="2" onclick="get(this.value);display()" id="2" class="keypad__keys"></input>
+        <input type="button" value="3" onclick="get(this.value);display()" id="3" class="keypad__keys"></input>
+        <input type="button" value="-" onclick="get(this.value);display()" id="-"class="keypad__keys"></input>
+        <input type="button" value="." onclick="get(this.value);display()" id="." class="keypad__keys"></input>
+        <input type="button" value="0" onclick="get(this.value);display()" id="0" class="keypad__keys"></input>
+        <input type="button" value="/" onclick="get(this.value);display()" id="/" class="keypad__keys"></input>
+        <input type="button" value="*" onclick="get(this.value);display()" id="x" class="keypad__keys"></input>
+        <input type="button" value="reset" onclick="reset()" id="reset" class="keypad__keys --secondary__keys --reset"></input>
+        <input type="button" value="=" onclick="calculate();displayResult()" id="equal" class="keypad__keys --tertiary__keys --equal"></input>
+      </div>
+    </section>
+  </main>
+  <script src="../app/app.js"></script>
+</body>
+</html>
